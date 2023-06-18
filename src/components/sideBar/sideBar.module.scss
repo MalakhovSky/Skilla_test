@@ -1,0 +1,68 @@
+.sideBar{
+    background: #091336;
+    display: grid;
+    grid-auto-rows: 80px  52px 52px 52px 52px 52px 52px 52px 52px 52px 52px  363px 1fr;
+}
+.sideButtons{
+    position: relative;
+}
+
+.sideButton1{
+    font-family:'SF Pro Display';
+    color: #FFFFFF;
+    font-size: 16px;
+
+    display: flex;
+    align-items:center;
+    position: absolute;
+    width: 200px;
+    height: 52px;
+    left: 20px;
+    top: 64px;
+
+    background: #005FF8;
+    border-radius: 4px;
+}
+.sideButton1 span{
+    position: absolute;
+    left: 24px;
+}
+.sideButton2{
+    font-family:'SF Pro Display';
+    color: #FFFFFF;
+    font-size: 16px;
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: absolute;
+    width: 200px;
+    height: 52px;
+    left: 20px;
+    top: 148px;
+
+    background: #005FF8;
+    border-radius: 4px;
+}
+.sideButton2 span{
+    position: absolute;
+    left: 65px;
+}
+.plusSVG{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 156px;
+    top: 14px;
+
+    color: rgba(216, 228, 251, 0.56);
+}
+.exclamationSVG{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 23px;
+    top: 14px;
+
+    color: rgba(216, 228, 251, 0.56);
+}

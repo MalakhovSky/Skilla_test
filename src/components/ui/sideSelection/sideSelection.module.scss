@@ -1,0 +1,30 @@
+.sideSection{
+    width: 52px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.resultSVG{
+    position: absolute;
+    width: 22px;
+    height: 12px;
+    align-self: center;
+    left:13px;
+    color:rgba(255, 255, 255, 0.6);
+}
+.text{
+
+    position: absolute;
+    width: 170px;
+    left: 48px;
+    font-family: SFProDisplayMedium;
+    font-size: 16px;
+    line-height: 24px;
+
+
+
+    color: rgba(255, 255, 255, 0.6);
+}
+.sideSection :active{
+    background: rgba(216, 228, 251, 0.32);
+}
