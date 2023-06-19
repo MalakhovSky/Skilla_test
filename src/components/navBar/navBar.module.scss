@@ -1,106 +1,119 @@
 .nav{
-    display:flex;
+    display:grid;
+    grid-template-columns: 296px 594px 790px;
     align-items: center;
     position: relative;
     width: 1680px;
     height: 64px;
 
     background: #FFFFFF;
-    /* тень */
     box-shadow: 0px 4px 5px #E9EDF3;
 }
 .date{
-    position: absolute;
-    left: 120px;
-    top: calc(50% - 22px/2);
-
+    margin-left: 120px;
     font-family: 'SF Pro Display';
     font-size: 15px;
-    line-height: 22px;
 
     align-items: flex-end;
     color: #899CB1;
 }
-.newCalls{
-    color: #122945;
-    position: absolute;
-    width: 162px;
-    left: 296px;
-
-    font-family: 'SFProDisplayRegular';
-
-    font-size: 14px;
-    line-height: 21px;
-    /* identical to box height, or 21px */
-}
-
-.newCalls span{
-    color:#00A775;
-
-}
-.newCallsProgress{
-    width: 156px;
-}
-.quality{
-    color: #122945;
-    position: absolute;
-    left:514px;
-    width: 164px;
-    font-family: 'SFProDisplayRegular';
-
-    font-size: 14px;
-    line-height: 21px;
-}
-.quality span{
-    color:#FFB800;
-}
-.qualityProgress{
-    width: 156px;
-}
+.progressBars{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
 
 
-.conversion{
-    color: #122945;
-    position: absolute;
-    left:734px;
-    width: 156px;
-    font-family: 'SFProDisplayRegular';
+    .newCalls{
+        align-self: center;
+        justify-self: start;
+        color: #122945;
+        width: 162px;
+        font-family: 'SFProDisplayRegular';
+        font-size: 14px;
+        line-height: 21px;
+        /* identical to box height, or 21px */
+        span{
+            color:#00A775;
+        }
+        .newCallsProgress{
+            width: 156px;
+        }
+    }
 
-    font-size: 14px;
-    line-height: 21px;
-}
-.conversion span {
-    color: #EA1A4F;
-}
-.conversionProgress{
-    width: 156px;
-}
+
+    .quality{
+        align-self: center;
+        justify-self: center;
+        color: #122945;
+        width: 164px;
+        font-family: 'SFProDisplayRegular';
+
+        font-size: 14px;
+        line-height: 21px;
+        span{
+            color:#FFB800;
+        }
+        .qualityProgress{
+            width: 156px;
+        }
+
+    }
 
 
-.SearchSVG{
-    position: absolute;
-    right:577px;
-    color: #ADBFDF;
-    width: 16px;
-    height: 16px;
+
+    .conversion{
+        align-self: center;
+        justify-self: end;
+        color: #122945;
+        width: 156px;
+        line-height: 21px;
+        font-family: 'SFProDisplayRegular';
+        font-size: 14px;
+        span {
+            color: #EA1A4F;
+        }
+        .conversionProgress{
+            width: 156px;
+        }
+
+    }
 }
-.IP{
-    position: absolute;
+
+.navGroup{
     display: flex;
-    right:251px;
-    font-family: 'SFProDisplayRegular';
-    font-size: 15px;
-    line-height: 140%;
-    color: #899CB1;
+    align-items: center;
+    justify-content: end;
 
+    .SearchSVG{
+        margin-right: 64px;
+        color: #ADBFDF;
+        width: 16px;
+        height: 16px;
+    }
+    .IP{
+
+        display: flex;
+        justify-self: end;
+        font-family: 'SFProDisplayRegular';
+        font-size: 15px;
+        color: #899CB1;
+
+    }
+    .face{
+        display: flex;
+        margin-left: 47px;
+    }
+    .sortIconSVG1{
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    .sortIconSVG2{
+        margin-right: 120px;
+        margin-left: 10px;
+        width: 12px;
+    }
 }
-.face{
-    position: absolute;
-    right:142px;
-    display: flex;
-}
-.sortIconSVG{
-    margin-left: 10px;
-    width: 12px;
-}
+
+
+
 

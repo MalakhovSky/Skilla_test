@@ -1,10 +1,11 @@
 import React from 'react';
-import style from './logo.module.css'
+import style from './logo.module.scss'
+import unionLogoSVG from '../icons/unionLogoSVG.svg'
 
-export const MyComponent = () => {
+export const Logo = () => {
   return (
-      <div>
-        
+      <div className={style.logoSVG}>
+        <img className={style.some} src={unionLogoSVG} alt="logoSVG"/>
       </div>
   );
 };

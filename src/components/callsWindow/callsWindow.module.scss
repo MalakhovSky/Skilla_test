@@ -1,0 +1,33 @@
+.callsWindow {
+  width: 1440px;
+  height: 1985px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 5px #E9EDF3;
+  margin-left: 120px;
+  margin-top: 75px;
+
+}
+
+.container {
+
+  width: 1360px;
+  height: 100%;
+  margin-left: 40px;
+
+  border: 1px solid red;
+  .categories{
+    display: grid;
+    grid-template-columns: 53px 89px 128px 326px 214px 461px 89px;
+    grid-template-rows: 61px;
+    justify-content: start;
+    align-content: center;
+
+    .category{
+      font-family: SFProDisplayRegular;
+      color:#899CB1;
+      font-size: 14px;
+    }
+  }
+
+}
