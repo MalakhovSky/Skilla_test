@@ -10,6 +10,7 @@
   justify-self: end;
   align-items: center;
   .balance{
+    margin-right: 48px;
     display: flex;
     align-items: center;
     position: relative;
@@ -82,6 +83,59 @@
   .types{
     display: flex;
     margin-left: 36px;
+    .invisible{
+      ul{
+        display: none;
+      }
+
+    }
   }
+  .sortTypesModal{
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    font-family: SFProDisplayRegular;
+    font-size:14px;
+    display: flex;
+    color:#5E7793;
+    img{
+      align-self: center;
+      margin-left: 8px;
+      margin-top: 4px;
+      width: 10px;
+      height: 6px;
+    }
+    .dropdown{
+      position: absolute;
+      right: 0px;
+      top:24px;
+      ul{
+
+        width: 204px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #FFFFFF;
+        cursor: pointer;
+        box-shadow: 0px 0px 26px 0px #E9EDF3CC;
+        border: 1px solid #EAF0FA;
+        border-radius: 3px;
+      }
+      li{
+        padding-top: 10px;
+        font-family: SFProDisplayRegular;
+        height: 40px;
+        color: #899CB1;
+        padding-left: 21px;
+        white-space: nowrap;
+      }
+      li:hover{
+        background-color: #ADBFDF;
+        color:#122945;
+        font-family: SFProDisplayRegular;
+      }
+    }
+  }
+
 }
 

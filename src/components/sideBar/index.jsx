@@ -5,9 +5,12 @@ import {Logo} from "../ui/logo";
 import {sections} from "../ui/adds/sideElements";
 import PlusSVG from '../ui/icons/plusSVG.svg'
 import ExclamationSVG from '../ui/icons/exclamationSVG.svg'
+import axios from "axios";
 
 
 export const SideBar = () => {
+
+
 
 
   return (
@@ -15,7 +18,7 @@ export const SideBar = () => {
         <Logo/>
         {
           sections.map((item, index) => (
-              <SideSelection icon={item.icon} text={item.text}/>
+              <SideSelection key={index} icon={item.icon} text={item.text}/>
           ))
         }
         <div className={style.sideButtons}>

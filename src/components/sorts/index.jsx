@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import style from './sorts.module.scss'
 import PlusSVG from '../ui/icons/bluePlus.svg'
 import LeftSVG from '../ui/icons/leftSVG.svg'
@@ -8,9 +8,42 @@ import SearchSVG from '../ui/icons/searchSVG.svg'
 import SortIconSVG from '../ui/icons/sortIconSVG.svg'
 import {SortElement} from "../ui/sortElement";
 import {sorts} from '../ui/adds/sortElements'
+import {useDispatch, useSelector} from "react-redux";
+import {setItems} from "../../redux/features/callsSlice";
+
+export const Sorts =  () => {
+  const [isActive, setIsActive] = useState(false);
+  const [callIn, setCallIn] = useState(false);
+  const {calls} = useSelector(state => state.callSlice)
+  const data = calls.results;
+  const dispatch = useDispatch()
 
 
-export const Sorts = () => {
+
+
+  const handleClickShow = event => {
+    setIsActive(current => !current);
+  };
+  //Входящие звонки
+  const filterIn = (data) => {
+    return data?.filter(function (el) {
+     return  el.in_out === 1
+    })
+  }
+  //Исходящие звонки
+  const filterOut = (data) => {
+    return data?.filter(function (el) {
+      return el.in_out === 0
+    })
+  }
+
+  const handleClickIn =()=>{
+    setCallIn(filterIn(data))
+    dispatch(setItems(callIn))
+    console.log(filterIn(data),'filter')
+  }
+
+
   return (
       <div className={style.sorts}>
         <div className={style.top}>
@@ -32,9 +65,22 @@ export const Sorts = () => {
             Поиск по запросам
           </div>
           <div className={style.types}>
+            <div  onClick={handleClickShow} className={ !isActive?`${style.sortTypesModal} ${style.invisible} `: style.sortTypesModal}>
+
+                Все типы <img className={style.arrowSVG} src={SortIconSVG} alt="arrow down"/>
+              <div className={style.dropdown}>
+                <ul >
+                  <li>Все звонки</li>
+                  <li onClick={handleClickIn}>Входящие звонки</li>
+                  <li>Исходящие звонки</li>
+
+                </ul>
+              </div>
+
+            </div>
           {
             sorts.map((item, index) => (
-                <SortElement text={item} imgSVG={SortIconSVG}/>
+                <SortElement key={index} text={item} imgSVG={SortIconSVG}/>
             ))
           }
           </div>
