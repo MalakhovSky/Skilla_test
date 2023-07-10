@@ -3,7 +3,7 @@ import {fetchCalls} from "./asyncActions";
 
 const initialState = {
   calls: [],
-  filter:[],
+  filterCondition: undefined, // 1 | 0 | undefined
   status: null,
   error: null,
 }
@@ -12,8 +12,8 @@ export const callSlice = createSlice({
   name: 'calls',
   initialState,
   reducers: {
-    setItems(state, action) {
-      state.filter=action.payload;
+    setFilterCondition(state, action) {
+      state.filterCondition = action.payload;
     },
   },
   // extraReducers:{
@@ -42,5 +42,5 @@ export const callSlice = createSlice({
   },
 })
 
-export const {setItems} = callSlice.actions;
+export const {setFilterCondition} = callSlice.actions;
 export default callSlice.reducer;

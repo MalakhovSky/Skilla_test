@@ -10,9 +10,11 @@ export const fetchCalls = createAsyncThunk('calls/fetchCalls',async () =>{
 
     const {data} = await axios.post('https://api.skilla.ru/mango/getList',null, token)
         .then(res =>{
+          console.log(res)
           return res
         })
-  return data
+  console.log(data.results)
+  return data.results
 })
 
 

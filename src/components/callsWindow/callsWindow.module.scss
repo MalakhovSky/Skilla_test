@@ -6,9 +6,10 @@
   box-shadow: 0 4px 5px #E9EDF3;
   margin-left: 120px;
   margin-top: 75px;
-  overflow:auto;
+  overflow: auto;
 
 }
+
 .callsWindow::-webkit-scrollbar {
   display: none;
 }
@@ -19,17 +20,36 @@
   height: 1985px;
   margin-left: 40px;
 
-  .categories{
+  .categories {
     display: grid;
     grid-template-columns: 53px 89px 128px 326px 214px 461px 89px;
     grid-template-rows: 61px;
     justify-content: start;
 
-    .category{
+    .category {
       align-self: center;
       font-family: SFProDisplayRegular, serif;
-      color:#899CB1;
+      color: #899CB1;
       font-size: 14px;
+    }
+
+  }
+
+  .tomorrow {
+    position: relative;
+    width: 58px;
+    display: flex;
+    justify-self: center;
+    color: #122945;
+    font-family: SFProDisplayRegular;
+    margin-top: 40px;
+    span {
+      color: #899CB1;
+      font-family: SFProDisplayRegular;
+      font-size: 12px;
+      position: absolute;
+      left:45px;
+      bottom: 8px;
     }
   }
 

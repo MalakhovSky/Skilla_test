@@ -3,7 +3,7 @@ import style from './navBar.module.scss'
 import SearchSVG from '../ui/icons/searchSVG.svg'
 import SortIconSVG from '../ui/icons/sortIconSVG.svg'
 import face from '../ui/images/face.jpg'
-import PercentBar from '../ui/icons/colorBar.svg'
+
 
 
 export const NavBar = () => {

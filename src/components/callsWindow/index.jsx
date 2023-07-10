@@ -1,59 +1,35 @@
-import React, {memo, useEffect, useState} from 'react';
+import React from 'react';
 import style from './callsWindow.module.scss'
 import {categories} from "../ui/adds/callsCategories";
 import {Call} from "../call";
-import {useDispatch, useSelector} from "react-redux";
-import {callsIn} from "../ui/adds/typesSort";
+import {useSelector} from "react-redux";
+
 
 
 export const CallsWindow = () => {
-  const [allCalls, setAllCalls] = useState(true);
-  const [callOut, setCallOut] = useState(false);
 
-  const dispatch = useDispatch()
+  let data
+  const calls = useSelector(state => state.callSlice.calls)
+  const filterCondition = useSelector(state => state.callSlice.filterCondition)
 
-
-  const {calls,filter} = useSelector(state => state.callSlice)
-  const data = calls.results;
-  const dataIn = filter.results;
-  console.log(dataIn,'Датаин в винодв' )
-
-  const [callIn, setCallIn] = useState(data);
-  console.log(data,'Все данные')
-
-  useEffect(() => {
-    setCallIn(dataIn)
-    console.log(dataIn,callIn, 'обновился калИН')
-  },[dataIn,callIn]);
-
-  //ОТрисовать из Слайса
-
-
-
-
-
-
+  if (filterCondition !== undefined) {
+    data = calls?.filter((call) => call.in_out === filterCondition)
+  } else {
+    data = calls
+  }
 
   //Звонки Сегодня
-  // const filterToday = (data) => {
+  // const filterToday = (сalls) => {
   //   return data?.filter(function (el) {
   //     return el.date_notime == new Date().toISOString().slice(0,10);
   //   })
   // }
-  // const filterTomorrow = (data) => {
+  //Звонки Завтра
+  // const filterTomorrow = (calls) => {
   //   return data?.filter(function (el) {
   //     return +el.date_notime !== new Date().toISOString().slice(0,10)
   //   })
   // }
-
-  //Звонки Завтра
-  // useEffect(() => {
-  //   // const date = new Date().toISOString().slice(0,10);
-  //   const callsIn = filterIn(data)
-  //   filterOut(data)
-  //
-  // },[]);
-
 
 
 
@@ -95,9 +71,7 @@ export const CallsWindow = () => {
                //          recordId={call.record}/>))
             }
           </div>
-          <div>
-            разделительное слово
-          </div>
+          <div className={style.tomorrow}>вчера <span>0</span></div>
           <div>
             {/*{*/}
             {/*  tomorrow?.map(call => (*/}

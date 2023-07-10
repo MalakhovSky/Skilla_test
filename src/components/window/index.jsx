@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import style from './mainWindow.module.scss'
 import {NavBar} from "../navBar";
 import {Sorts} from "../sorts";

@@ -3,9 +3,7 @@ import style from './call.module.scss'
 import {callStatusType} from "../ui/adds/callStatusType";
 import {fetchRecord} from "../../redux/features/asyncActions";
 import {AudioPlayer} from "../audioPlayer";
-import {Bad} from "../estimation/bad";
-import {Good} from "../estimation/good";
-import {Excellent} from "../estimation/excellent";
+
 import {EstimationScam} from "../estimation/estimationScam";
 
 

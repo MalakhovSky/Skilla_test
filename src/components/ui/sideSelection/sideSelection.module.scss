@@ -1,15 +1,18 @@
 .sideSection{
     display: grid;
-    width: 52px;
-    position: relative;
-    grid-template-columns: 48px 1fr;
-
+    grid-template-columns: 48px 1fr 30px;
+    cursor: pointer;
+    .yellowPoint{
+        align-self: center;
+        padding-top: 10px;
+        display: none;
+    }
 }
 .resultSVG{
     width: 22px;
     align-self: center;
     justify-self: center;
-    color:rgba(255, 255, 255, 0.6);
+    fill: green;
 }
 .text{
     font-family: SFProDisplayMedium;
@@ -19,6 +22,11 @@
 
     color: rgba(255, 255, 255, 0.6);
 }
-.sideSection :active{
+.sideSectionActive{
     background: rgba(216, 228, 251, 0.32);
+    border-left:3px solid #002CFB;
+    .yellowPoint{
+        display: block;
+    }
+
 }
