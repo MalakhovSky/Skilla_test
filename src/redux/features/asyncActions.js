@@ -10,10 +10,13 @@ export const fetchCalls = createAsyncThunk('calls/fetchCalls',async () =>{
 
     const {data} = await axios.post('https://api.skilla.ru/mango/getList',null, token)
         .then(res =>{
-          console.log(res)
           return res
         })
-  console.log(data.results)
+        .catch(error=>{
+          console.log(error,'Ошибка получения общих данных')
+        })
+
+
   return data.results
 })
 
@@ -35,6 +38,8 @@ export const fetchRecord = async (recordId,partnerId) =>{
       })
       .then(res =>{
           return res
+      }).catch(error=>{
+        console.log(error,'Ошибка получения записей')
       })
   return data
 }

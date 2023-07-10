@@ -21,10 +21,8 @@ export const Call = ({status,type,time,employee,phoneNumber,from,estimation,prog
       fetchRecord(recordId, partnerId)
           .then(res => {
             setIsRecord(res);
-            console.log(res, '----------- ТУТ')
           })
           .catch(res => {
-            console.log(res)
             setIsRecord('none')
           })
     }
